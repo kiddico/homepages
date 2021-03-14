@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!-- 
+    Stolen from : http://onelongscream.com/
+	Modified to repeat after overflow.
+	Makes a great homepage.
+-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>one long scream</title>
+	<meta name="description" content="one long scream" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--
+	Removing the external call, leaving it here to maintain the artistic intent. Or some thing like that.
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	-->
+</head>
+
+<style type="text/css">
+
+	body{
+	    /*
+		Raleway was the original font.
+		I put some others that are kinda close and just hope the system has 'em.
+		Not sure what is standard on any of my systems. Source Pro is definitely not lol.
+		*/
+		   
+		font-family: Corbel Light, DejaVu Sans Light, Source Sans Pro Light, Noto Sans Light, sans-serif; 
+		text-align: left;
+		font-size: 48px;
+	}
+</style>
+
+<script type="text/javascript">	
+function screamBinch() {
+	let screamText = document.querySelector('.scream');
+	screamText.textContent = screamText.textContent + 'H' + '\n';
+	
+	// Check if we've overflown and reset 
+	if (screamText.clientHeight > window.innerHeight){
+		screamText.textContent = "A H ";
+	}
+}
+
+setInterval(screamBinch, 10);
+</script>
+
+<body>
+	<div class="container">
+	<div class="scream">A H </div>
+</div></body>
